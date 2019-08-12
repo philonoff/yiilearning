@@ -43,7 +43,9 @@ return [
             'rules' => [
             ],
         ],
-
+        'stringHelper' => [
+            'class' => 'frontend\components\StringHelper',
+        ],
     ],
     'params' => $params,
 ];
