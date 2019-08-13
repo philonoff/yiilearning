@@ -48,18 +48,6 @@ return [
         'stringHelper' => [
             'class' => 'frontend\components\StringHelper',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'philkrm@gmail.com',
-                'password' => 'zncrbeznwcjwwcqw',
-                'port' => '587',
-                'encryption' => 'tls',
-            ],
-        ],
     ],
     'params' => $params,
 ];
