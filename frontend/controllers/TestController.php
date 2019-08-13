@@ -15,14 +15,16 @@ class TestController extends Controller
         $maxNewsInList = Yii::$app->params['maxNewsInList'];
         $newsList = $model->getNewsList($maxNewsInList);
 
-        if (!empty($newsList) && is_array($newsList)) {
-            foreach ($newsList as &$news) {
-                $news['text'] = Yii::$app->stringHelper->getShort($news['text']);
-            }
-        }
-
         return $this->render('index', [
             'newsList' => $newsList,
+        ]);
+    }
+
+    public function actionView($newsId)
+    {
+        $newsItem = Test::getNewsItemById($newsId);
+        return $this->render('view', [
+            'newsItem' => $newsItem,
         ]);
     }
 

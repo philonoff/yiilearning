@@ -41,6 +41,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'news' => 'test/index',
+                'news/<newsId:\d+>' => 'test/view',
             ],
         ],
         'stringHelper' => [
@@ -53,7 +55,6 @@ return [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
                 'username' => 'philkrm@gmail.com',
-//                'password' => 'Gml:Iwbywmlsttn',
                 'password' => 'zncrbeznwcjwwcqw',
                 'port' => '587',
                 'encryption' => 'tls',
