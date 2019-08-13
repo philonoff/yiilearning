@@ -20,4 +20,10 @@ class StringHelper
         }
         return mb_substr($string, 0, $length);
     }
+
+    public function getShortToFewWords($string, $numberOfWords)
+    {
+        $words = array_slice(explode(" ", $string), 0, $numberOfWords);
+        return implode(" ", $words) . "...";
+    }
 }

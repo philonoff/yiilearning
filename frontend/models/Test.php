@@ -15,7 +15,7 @@ class Test extends Model
 
         if (!empty($newsList) && is_array($newsList)) {
             foreach ($newsList as &$news) {
-                $news['text'] = Yii::$app->stringHelper->getShort($news['text']);
+                $news['text'] = Yii::$app->stringHelper->getShortToFewWords($news['text'], 4);
             }
         }
 
