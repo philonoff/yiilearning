@@ -9,6 +9,8 @@ use frontend\models\Test;
 
 class TestController extends Controller
 {
+    public $layout = 'test';
+
     public function actionIndex()
     {
         $model = new Test();
