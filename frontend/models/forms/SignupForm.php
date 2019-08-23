@@ -2,6 +2,7 @@
 
 namespace frontend\models\forms;
 
+use frontend\models\events\UserRegisteredEvent;
 use Yii;
 use yii\base\Model;
 use frontend\models\User;
@@ -43,6 +44,10 @@ class SignupForm extends Model
             $user->password_hash = Yii::$app->security->generatePasswordHash($this->password);
 
             if ($user->save()) {
+                $event = new UserRegisteredEvent();
+                $event->user = $user;
+                $event->subject = 'New user registered';
+                $user->trigger(User::USER_REGISTERED, $event);
                 return $user;
             }
         }
