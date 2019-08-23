@@ -3,8 +3,8 @@
 namespace frontend\models;
 
 use Yii;
+use yii\web\IdentityInterface;
 use yii\db\ActiveRecord;
-use common\components\UserNotificationInterface;
 
 /**
  * This is the model class for table "user".
